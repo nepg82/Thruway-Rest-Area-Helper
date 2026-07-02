@@ -122,6 +122,7 @@ function setRoute(r) {
 }
 
 function update() {
+  if (data.length === 0) { return; }
   const mile = parseFloat(document.getElementById("mile").value);
   const out = document.getElementById("output");
 
