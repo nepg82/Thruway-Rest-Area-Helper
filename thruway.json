@@ -67,9 +67,8 @@
     "type": "service",
     "fuel": true,
     "restaurants": [
-      "Burger King",
-      "Panera Bread",
-      "Dunkin'",
+      "Shake Shack",
+      "Starbucks",
       "Applegreen Market"
     ]
   },
@@ -88,20 +87,20 @@
     "type": "service",
     "fuel": true,
     "restaurants": [
+      "Burger King",
       "Chick-fil-A",
       "Starbucks",
       "Applegreen Market"
     ]
   },
   {
-    "name": "Oneida",
+    "name": "Chittenango",
     "route": "90W",
-    "mile": 241.0,
+    "mile": 266.0,
     "type": "service",
     "fuel": true,
     "restaurants": [
-      "Burger King",
-      "Panera Bread",
+      "Chick-fil-A",
       "Starbucks",
       "Applegreen Market"
     ]
@@ -125,6 +124,7 @@
     "fuel": true,
     "restaurants": [
       "Burger King",
+      "Chick-fil-A",
       "Starbucks",
       "Applegreen Market"
     ]
@@ -144,8 +144,9 @@
     "type": "service",
     "fuel": true,
     "restaurants": [
-      "Burger King",
-      "Dunkin'",
+      "Chick-fil-A",
+      "Panera Bread",
+      "Starbucks",
       "Applegreen Market"
     ]
   }
