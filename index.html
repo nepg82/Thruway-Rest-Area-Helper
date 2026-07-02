@@ -105,6 +105,13 @@
 <script>
 let data = [];
 
+async function loadData() {
+    const response = await fetch("thruway.json");
+    data = await response.json();
+}
+
+loadData();
+
 let selectedRoute = null;
 
 function setRoute(r) {
