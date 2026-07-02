@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Angola",
+    "route": "90W",
+    "mile": 447.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Panda Express",
+      "Auntie Anne's",
+      "Cinnabon",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Hamburg",
+    "route": "90W",
+    "mile": 442.6,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Clarence",
+    "route": "90W",
+    "mile": 412.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Popeyes",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Ontario",
+    "route": "90W",
+    "mile": 376.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Seneca",
+    "route": "90W",
+    "mile": 350.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Popeyes",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Junius Ponds",
+    "route": "90W",
+    "mile": 324.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Panera Bread",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Weedsport",
+    "route": "90W",
+    "mile": 318.2,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Warners",
+    "route": "90W",
+    "mile": 292.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Chick-fil-A",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Oneida",
+    "route": "90W",
+    "mile": 241.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Panera Bread",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Schuyler",
+    "route": "90W",
+    "mile": 227.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Iroquois",
+    "route": "90W",
+    "mile": 210.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Fultonville",
+    "route": "90W",
+    "mile": 184.1,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Pattersonville",
+    "route": "90W",
+    "mile": 168.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  }
+]
