@@ -163,7 +163,7 @@ function renderStop(label, stop, current) {
     <div class="stop">
       <div class="meta">${label}</div>
       <div class="name">${stop.name}</div>
-      <div class="meta">MM ${stop.mile} • ${Math.abs(stop.mile - current)} miles</div>
+      <div class="meta">MM ${stop.mile} • ${Math.round(Math.abs(stop.mile - current) * 10) / 10} miles</div>
       <div class="food">
         ${stop.restaurants && stop.restaurants.length ? stop.restaurants.join(" • ") : "Rest area"}
       </div>
