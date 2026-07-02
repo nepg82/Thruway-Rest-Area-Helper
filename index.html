@@ -131,15 +131,17 @@ function update() {
     return;
   }
 
-  const list = data
-    .filter(d => d.route === selectedRoute)
-    .sort((a,b) => a.mile - b.mile);
+  const list = data.filter(d => d.route === selectedRoute);
 
-  const increasing = selectedRoute.includes("E") || selectedRoute.includes("N");
+const increasing =
+    selectedRoute === "87N" ||
+    selectedRoute === "90W";
 
-  const next = list.filter(d =>
-    increasing ? d.mile > mile : d.mile < mile
-  );
+const next = list.filter(d =>
+    increasing
+        ? d.mile > mile
+        : d.mile < mile
+);
 
   const n1 = next[0];
   const n2 = next[1];
