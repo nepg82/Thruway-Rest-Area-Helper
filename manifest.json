@@ -1,0 +1,23 @@
+{
+  "name": "NYS Thruway Rest Area Helper",
+  "short_name": "Rest Areas",
+  "description": "A simple tool for determining the next rest area on a road trip in NY.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0d0f",
+  "theme_color": "#0d0d0f",
+  "icons": [
+    {
+      "src": "app-icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
