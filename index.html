@@ -90,10 +90,10 @@
 <h1>NYS Thruway Stops</h1>
 
 <div class="routes">
-  <button onclick="setRoute('87N')">I-87 N</button>
-  <button onclick="setRoute('87S')">I-87 S</button>
-  <button onclick="setRoute('90W')">I-90 W</button>
-  <button onclick="setRoute('90E')">I-90 E</button>
+  <button onclick="setRoute('87N', this)">I-87 N</button>
+  <button onclick="setRoute('87S', this)">I-87 S</button>
+  <button onclick="setRoute('90W', this)">I-90 W</button>
+  <button onclick="setRoute('90E', this)">I-90 E</button>
 </div>
 
 <div class="input">
@@ -114,10 +114,10 @@ loadData();
 
 let selectedRoute = null;
 
-function setRoute(r) {
+function setRoute(r, btn) {
   selectedRoute = r;
   document.querySelectorAll("button").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
+  btn.classList.add("active");
   update();
 }
 
@@ -144,7 +144,12 @@ function update() {
     increasing ? d.mile > mile : d.mile < mile
   );
 
-  const next = list.slice(index, index + 2);
+  const next = index === -1 ? [] : list.slice(index, index + 2);
+
+  if (next.length === 0) {
+    out.innerHTML = "No more stops ahead on this route — you've reached the end of our data.";
+    return;
+  }
 
   out.innerHTML =
     renderStop("Next Stop", next[0], mile) +
@@ -160,7 +165,7 @@ function renderStop(label, stop, current) {
       <div class="name">${stop.name}</div>
       <div class="meta">MM ${stop.mile} • ${Math.abs(stop.mile - current)} miles</div>
       <div class="food">
-        ${stop.food ? stop.food.join(" • ") : "Rest area"}
+        ${stop.restaurants && stop.restaurants.length ? stop.restaurants.join(" • ") : "Rest area"}
       </div>
     </div>
   `;
