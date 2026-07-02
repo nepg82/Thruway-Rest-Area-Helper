@@ -122,7 +122,8 @@ function setRoute(r) {
 }
 
 function update() {
-  if (data.length === 0) { return; }
+  if (data.length === 0) return;
+
   const mile = parseFloat(document.getElementById("mile").value);
   const out = document.getElementById("output");
 
@@ -131,23 +132,23 @@ function update() {
     return;
   }
 
-  const list = data.filter(d => d.route === selectedRoute);
-
-const increasing =
+  const increasing =
     selectedRoute === "87N" ||
     selectedRoute === "90W";
 
-const next = list.filter(d =>
-    increasing
-        ? d.mile > mile
-        : d.mile < mile
-);
+  const list = data
+    .filter(d => d.route === selectedRoute)
+    .sort((a, b) => a.mile - b.mile);
 
-  const n1 = next[0];
-  const n2 = next[1];
+  const index = list.findIndex(d =>
+    increasing ? d.mile > mile : d.mile < mile
+  );
 
-  out.innerHTML = renderStop("Next Stop", n1, mile) +
-                  renderStop("Following Stop", n2, mile);
+  const next = list.slice(index, index + 2);
+
+  out.innerHTML =
+    renderStop("Next Stop", next[0], mile) +
+    renderStop("Following Stop", next[1], mile);
 }
 
 function renderStop(label, stop, current) {
