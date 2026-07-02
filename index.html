@@ -1,14 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thruway Rest Area Helper</title>
-<style>
-</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NYS Thruway Stops</title>
+<link rel="manifest" href="manifest.json">
 
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 16px;
+    background: #111;
+    color: #eee;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .routes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #2b2b2b;
+    color: white;
+  }
+
+  button.active {
+    background: #0077ff;
+  }
+
+  .input {
+    margin: 12px 0;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #000;
+    color: #fff;
+  }
+
+  .result {
+    margin-top: 16px;
+    padding: 12px;
+    background: #1b1b1b;
+    border-radius: 8px;
+  }
+
+  .stop {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #333;
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .food {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #ccc;
+  }
+</style>
 </head>
+
 <body>
+
+<h1>NYS Thruway Stops</h1>
+
+<div class="routes">
+  <button onclick="setRoute('I-87N')">I-87 N</button>
+  <button onclick="setRoute('I-87S')">I-87 S</button>
+  <button onclick="setRoute('I-90W')">I-90 W</button>
+  <button onclick="setRoute('I-90E')">I-90 E</button>
+</div>
+
+<div class="input">
+  <input id="mile" type="number" placeholder="Enter mile marker" oninput="update()" />
+</div>
+
+<div id="output" class="result">Select route + mile marker</div>
+
+<script>
+// --- tiny dataset (expand later) ---
+const data = [
+  { name:"Ontario", route:"I-90W", mile:376, food:["Burger King","Starbucks"] },
+  { name:"Scottsville", route:"I-90W", mile:366, food:["Dunkin'","Burger King"] },
+  { name:"Warners", route:"I-90W", mile:292, food:["Chick-fil-A","Starbucks"] },
+
+  { name:"Clifton Springs", route:"I-90E", mile:337, food:["Burger King","Subway"] },
+  { name:"Junius Ponds", route:"I-90E", mile:324, food:["Dunkin'","Burger King"] },
+];
+
+let selectedRoute = null;
+
+function setRoute(r) {
+  selectedRoute = r;
+  document.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+  update();
+}
+
+function update() {
+  const mile = parseFloat(document.getElementById("mile").value);
+  const out = document.getElementById("output");
+
+  if (!selectedRoute || isNaN(mile)) {
+    out.innerHTML = "Select route + mile marker";
+    return;
+  }
+
+  const list = data
+    .filter(d => d.route === selectedRoute)
+    .sort((a,b) => a.mile - b.mile);
+
+  const increasing = selectedRoute.includes("E") || selectedRoute.includes("N");
+
+  const next = list.filter(d =>
+    increasing ? d.mile > mile : d.mile < mile
+  );
+
+  const n1 = next[0];
+  const n2 = next[1];
+
+  out.innerHTML = renderStop("Next Stop", n1, mile) +
+                  renderStop("Following Stop", n2, mile);
+}
+
+function renderStop(label, stop, current) {
+  if (!stop) return "";
+
+  return `
+    <div class="stop">
+      <div class="meta">${label}</div>
+      <div class="name">${stop.name}</div>
+      <div class="meta">MM ${stop.mile} • ${Math.abs(stop.mile - current)} miles</div>
+      <div class="food">
+        ${stop.food ? stop.food.join(" • ") : "Rest area"}
+      </div>
+    </div>
+  `;
+}
+
+// service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 
 </body>
 </html>
