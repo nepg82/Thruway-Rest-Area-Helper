@@ -59,28 +59,69 @@
     padding: 12px;
     background: #1b1b1b;
     border-radius: 8px;
+    max-height: 70vh;
+    overflow-y: auto;
   }
 
   .stop {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 12px;
+    border-left: 6px solid #555;
     border-bottom: 1px solid #333;
+    border-radius: 4px;
+    background: #1f1f1f;
+  }
+
+  .stop.service {
+    border-left-color: #2ecc71;
+  }
+
+  .stop.rest {
+    border-left-color: #f5a623;
+  }
+
+  .stop-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .stop-right {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: right;
+  }
+
+  .label {
+    font-size: 22px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .name {
-    font-size: 16px;
+    font-size: 32px;
     font-weight: bold;
   }
 
   .meta {
-    font-size: 13px;
+    font-size: 26px;
     color: #aaa;
   }
 
   .food {
-    margin-top: 6px;
-    font-size: 13px;
+    font-size: 26px;
     color: #ccc;
+    line-height: 1.4;
+  }
+
+  .empty-msg {
+    font-size: 26px;
+    color: #ccc;
+    padding: 8px;
   }
 </style>
 </head>
@@ -144,28 +185,42 @@ function update() {
     increasing ? d.mile > mile : d.mile < mile
   );
 
-  const next = index === -1 ? [] : list.slice(index, index + 2);
+  const remaining = index === -1 ? [] : list.slice(index);
 
-  if (next.length === 0) {
+  if (remaining.length === 0) {
     out.innerHTML = "No more stops ahead on this route — you've reached the end of our data.";
     return;
   }
 
-  out.innerHTML =
-    renderStop("Next Stop", next[0], mile) +
-    renderStop("Following Stop", next[1], mile);
+  const upcoming = remaining.slice(0, 4);
+  const labels = ["Next Stop", "2nd Stop", "3rd Stop", "4th Stop"];
+
+  out.innerHTML = upcoming
+    .map((stop, i) => renderStop(labels[i], stop, mile))
+    .join("");
+
+  if (upcoming.length < 4) {
+    out.innerHTML += `<div class="empty-msg">Only ${upcoming.length} more stop${upcoming.length === 1 ? "" : "s"} on this route from here.</div>`;
+  }
 }
 
 function renderStop(label, stop, current) {
   if (!stop) return "";
 
+  const typeClass = stop.type === "rest" ? "rest" : "service";
+  const foodHtml = stop.restaurants && stop.restaurants.length
+    ? stop.restaurants.join("<br>")
+    : "Rest area — no food";
+
   return `
-    <div class="stop">
-      <div class="meta">${label}</div>
-      <div class="name">${stop.name}</div>
-      <div class="meta">MM ${stop.mile} • ${Math.round(Math.abs(stop.mile - current) * 10) / 10} miles</div>
-      <div class="food">
-        ${stop.restaurants && stop.restaurants.length ? stop.restaurants.join(" • ") : "Rest area"}
+    <div class="stop ${typeClass}">
+      <div class="stop-left">
+        <div class="label">${label}</div>
+        <div class="name">${stop.name}</div>
+        <div class="meta">MM ${stop.mile} • ${Math.round(Math.abs(stop.mile - current) * 10) / 10} miles</div>
+      </div>
+      <div class="stop-right">
+        <div class="food">${foodHtml}</div>
       </div>
     </div>
   `;
