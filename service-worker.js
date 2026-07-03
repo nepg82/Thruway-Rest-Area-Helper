@@ -2,6 +2,7 @@
 // Keeps the app installable as a PWA without stale-content headaches.
 // Existing caches from older versions of this file are wiped on activate.
 
+
 self.addEventListener("install", () => {
   self.skipWaiting();
 });
