@@ -210,14 +210,14 @@ function renderStop(label, stop, current) {
   const typeClass = stop.type === "rest" ? "rest" : "service";
   const foodHtml = stop.restaurants && stop.restaurants.length
     ? stop.restaurants.join("<br>")
-    : "Rest area — no food";
+    : "Rest area<br>No food";
 
   return `
     <div class="stop ${typeClass}">
       <div class="stop-left">
         <div class="label">${label}</div>
         <div class="name">${stop.name}</div>
-        <div class="meta">MM ${stop.mile} • ${Math.round(Math.abs(stop.mile - current) * 10) / 10} miles</div>
+        <div class="meta">MM ${stop.mile}<br>${Math.round(Math.abs(stop.mile - current) * 10) / 10} miles</div>
       </div>
       <div class="stop-right">
         <div class="food">${foodHtml}</div>
