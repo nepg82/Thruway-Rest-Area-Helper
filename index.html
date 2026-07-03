@@ -130,15 +130,13 @@
 
 <h1>NYS Thruway Stops</h1>
 
-<div class="routes">
-  <button onclick="setRoute('87N', this)">I-87 N</button>
-  <button onclick="setRoute('87S', this)">I-87 S</button>
-  <button onclick="setRoute('90W', this)">I-90 W</button>
-  <button onclick="setRoute('90E', this)">I-90 E</button>
-</div>
-
 <div class="input">
   <input id="mile" type="number" placeholder="Enter mile marker" oninput="update()" />
+</div>
+
+<div class="routes">
+  <button onclick="setRoute('nw', this)">⬆️ N / W (87N → 90W)</button>
+  <button onclick="setRoute('se', this)">⬇️ E / S (90E → 87S)</button>
 </div>
 
 <div id="output" class="result">Select route + mile marker</div>
@@ -162,6 +160,16 @@ function setRoute(r, btn) {
   update();
 }
 
+const ROUTE_GROUPS = {
+  nw: ["87N", "90W"],
+  se: ["87S", "90E"]
+};
+
+const GROUP_INCREASING = {
+  nw: true,
+  se: false
+};
+
 function update() {
   if (data.length === 0) return;
 
@@ -173,12 +181,10 @@ function update() {
     return;
   }
 
-  const increasing =
-    selectedRoute === "87N" ||
-    selectedRoute === "90W";
+  const increasing = GROUP_INCREASING[selectedRoute];
 
   const list = data
-    .filter(d => d.route === selectedRoute)
+    .filter(d => ROUTE_GROUPS[selectedRoute].includes(d.route))
     .sort((a, b) => a.mile - b.mile);
 
   const index = list.findIndex(d =>
