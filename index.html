@@ -214,7 +214,7 @@ function update() {
 
   const list = data
     .filter(d => ROUTE_GROUPS[selectedRoute].includes(d.route))
-    .sort((a, b) => a.mile - b.mile);
+    .sort((a, b) => increasing ? a.mile - b.mile : b.mile - a.mile);
 
   const index = list.findIndex(d =>
     increasing ? d.mile > mile : d.mile < mile
