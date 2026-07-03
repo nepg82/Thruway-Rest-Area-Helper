@@ -131,12 +131,12 @@
 <h1>NYS Thruway Stops</h1>
 
 <div class="input">
-  <input id="mile" type="number" placeholder="Enter mile marker" oninput="update()" />
+  <input id="mile" type="number" placeholder="Enter mile marker" oninput="handleMileInput()" />
 </div>
 
 <div class="routes">
-  <button onclick="setRoute('nw', this)">⬆️ N / W (87N → 90W)</button>
-  <button onclick="setRoute('se', this)">⬇️ E / S (90E → 87S)</button>
+  <button onclick="setRoute('nw', this)">⬆️ N / W<br>(87N → 90W)</button>
+  <button onclick="setRoute('se', this)">⬇️ E / S<br>(90E → 87S)</button>
 </div>
 
 <div id="output" class="result">Select route + mile marker</div>
@@ -169,6 +169,35 @@ const GROUP_INCREASING = {
   nw: true,
   se: false
 };
+
+function handleMileInput() {
+  const val = document.getElementById("mile").value;
+  if (val === "999") {
+    forceRefresh();
+    return;
+  }
+  update();
+}
+
+async function forceRefresh() {
+  const out = document.getElementById("output");
+  out.innerHTML = "Refreshing app from server…";
+
+  try {
+    if ("caches" in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((k) => caches.delete(k)));
+    }
+    if ("serviceWorker" in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((r) => r.unregister()));
+    }
+  } catch (e) {
+    console.error("Force refresh failed:", e);
+  }
+
+  window.location.reload();
+}
 
 function update() {
   if (data.length === 0) return;
