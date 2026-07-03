@@ -149,5 +149,315 @@
       "Starbucks",
       "Applegreen Market"
     ]
+  },
+  {
+    "name": "Ardsley",
+    "route": "87N",
+    "mile": 6.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Chick-fil-A",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Sloatsburg",
+    "route": "87N",
+    "mile": 33.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Panda Express",
+      "Dunkin'",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Plattekill",
+    "route": "87N",
+    "mile": 65.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Chick-fil-A",
+      "Panera Bread",
+      "Auntie Anne's",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Kingston",
+    "route": "87N",
+    "mile": 99.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Malden",
+    "route": "87N",
+    "mile": 103.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Popeyes",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "New Baltimore",
+    "route": "87N",
+    "mile": 127.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Panera Bread",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Ramapo",
+    "route": "87S",
+    "mile": 33.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Panda Express",
+      "Panera Bread",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Modena",
+    "route": "87S",
+    "mile": 66.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Popeyes",
+      "Pret a Manger",
+      "Auntie Anne's",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Ulster",
+    "route": "87S",
+    "mile": 96.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Panda Express",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Catskill",
+    "route": "87S",
+    "mile": 103.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "New Baltimore",
+    "route": "87S",
+    "mile": 127.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Panera Bread",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Selkirk",
+    "route": "87S",
+    "mile": 139.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Guilderland",
+    "route": "90E",
+    "mile": 153.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Mohawk",
+    "route": "90E",
+    "mile": 172.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Canajoharie",
+    "route": "90E",
+    "mile": 184.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Indian Castle",
+    "route": "90E",
+    "mile": 210.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Popeyes",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Oneida",
+    "route": "90E",
+    "mile": 244.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Panera Bread",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Verona",
+    "route": "90E",
+    "mile": 250.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "DeWitt",
+    "route": "90E",
+    "mile": 280.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Port Byron",
+    "route": "90E",
+    "mile": 310.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Clifton Springs",
+    "route": "90E",
+    "mile": 337.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Auntie Anne's",
+      "Starbucks",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Rochester",
+    "route": "90E",
+    "mile": 353.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Scottsville",
+    "route": "90E",
+    "mile": 366.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Pembroke",
+    "route": "90E",
+    "mile": 397.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Burger King",
+      "Panera Bread",
+      "Popeyes",
+      "Dunkin'",
+      "Applegreen Market"
+    ]
+  },
+  {
+    "name": "Eden",
+    "route": "90E",
+    "mile": 443.0,
+    "type": "rest",
+    "fuel": false,
+    "restaurants": []
+  },
+  {
+    "name": "Angola",
+    "route": "90E",
+    "mile": 447.0,
+    "type": "service",
+    "fuel": true,
+    "restaurants": [
+      "Shake Shack",
+      "Chick-fil-A",
+      "Panda Express",
+      "Auntie Anne's",
+      "Cinnabon",
+      "Starbucks",
+      "Applegreen Market"
+    ]
   }
 ]
