@@ -10,21 +10,38 @@ body {
 h1 {
   margin: 0 0 12px 0;
   padding: 6px 10px;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: normal;
-
   background: #e6e6e6;
   border: 2px solid #000;
   border-bottom: 4px solid #000;
-
   text-align: center;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+h1::before,
+h1::after {
+  content: "";
+  flex: 1;
+  height: 22px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 2px,
+    transparent 2px,
+    transparent 5px
+  );
 }
 
 /* Buttons */
 button {
-  padding: 10px;
-  font-size: 14px;
+  padding: 18px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
   background: #e0e0e0;
   color: #000;
   border: 2px solid #000;
@@ -33,10 +50,10 @@ button {
     inset -1px -1px 0 #7f7f7f,
     inset 1px 1px 0 #ffffff;
 }
-
 button.active {
   background: #000;
   color: #fff;
+  box-shadow: none;
 }
 
 /* Input fields (classic inset look) */
@@ -56,19 +73,24 @@ input {
   border: 2px solid #000;
 }
 
-/* Stop cards → flatten into classic list blocks */
+/* Stop rows → single panel, thin dividers, left accent bar */
 .stop {
-  background: #e6e6e6;
-  border: 1px solid #000;
-  border-radius: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #999;
+  padding-bottom: 12px;
 }
-
+.stop:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 .stop.service {
   border-left: 6px solid #000;
+  padding-left: 12px;
 }
-
 .stop.rest {
   border-left: 6px solid #555;
+  padding-left: 12px;
 }
 
 /* Typography */
@@ -78,18 +100,16 @@ input {
   letter-spacing: 0.08em;
   color: #333;
 }
-
 .name {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
 }
-
 .meta,
 .food {
   font-size: 16px;
   color: #111;
 }
-
 .empty-msg {
   font-size: 14px;
+  padding: 8px 0;
 }
