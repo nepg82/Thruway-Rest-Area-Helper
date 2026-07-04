@@ -1,10 +1,15 @@
-const CACHE_NAME = "thruway-rest-stops-v3";
+const CACHE_NAME = "thruway-rest-stops-v4";
 
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./thruway.json"
+  "./thruway.json",
+  "./base.css",
+  "./layout.css",
+  "./theme-mac.css",
+  "./standard-theme.css",
+  "./fonts/ChiKareGo2.ttf"
 ];
 
 // INSTALL — cache the app shell + data for offline use
