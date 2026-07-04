@@ -91,6 +91,8 @@ input {
 .stop.rest {
   border-left: 6px solid #555;
   padding-left: 12px;
+  background: #fff;
+  font-style: italic;
 }
 
 /* Typography */
