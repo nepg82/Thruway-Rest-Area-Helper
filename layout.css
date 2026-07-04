@@ -1,0 +1,51 @@
+body {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.routes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.input {
+  margin: 12px 0;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 12px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.stop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.stop-left,
+.stop-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.stop-right {
+  text-align: right;
+}
