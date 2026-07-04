@@ -95,18 +95,18 @@ input {
 
 /* Typography */
 .label {
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #333;
 }
 .name {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 .meta,
 .food {
-  font-size: 16px;
+  font-size: 18px;
   color: #111;
 }
 .empty-msg {
