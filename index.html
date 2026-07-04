@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="layout.css">
-<link rel="stylesheet" href="theme-mac.css">
+<link rel="stylesheet" href="theme-mac.css" id="theme-link">
 </head>
 
 <body>
@@ -60,9 +60,28 @@ function handleMileInput() {
     forceRefresh();
     return;
   }
+  if (val === "777") {
+    toggleTheme();
+    return;
+  }
   update();
 }
 
+function toggleTheme() {
+  const link = document.getElementById("theme-link");
+  const current = link.getAttribute("href");
+  const next = current === "theme-mac.css" ? "standard-theme.css" : "theme-mac.css";
+  link.setAttribute("href", next);
+  localStorage.setItem("theme", next);
+  document.getElementById("mile").value = "";
+  document.getElementById("output").innerHTML = "Theme switched — select route + mile marker";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme");
+  if (saved) document.getElementById("theme-link").setAttribute("href", saved);
+});
+  
 async function forceRefresh() {
   const out = document.getElementById("output");
   out.innerHTML = "Refreshing app from server…";
