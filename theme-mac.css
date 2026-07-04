@@ -3,11 +3,22 @@ body {
   color: #000;
   font-family: "Chicago", "Geneva", sans-serif;
   -webkit-font-smoothing: none;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 16px;
+  margin: 0 0 12px 0;
+  padding: 6px 10px;
+  font-size: 18px;
   font-weight: normal;
+
+  background: #e6e6e6;
+  border: 2px solid #000;
+  border-bottom: 4px solid #000;
+
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 /* Buttons */
@@ -62,20 +73,20 @@ input {
 
 /* Typography */
 .label {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #333;
 }
 
 .name {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .meta,
 .food {
-  font-size: 14px;
+  font-size: 16px;
   color: #111;
 }
 
