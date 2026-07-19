@@ -1,4 +1,4 @@
-const CACHE_NAME = "thruway-rest-stops-v4";
+const CACHE_NAME = "thruway-rest-stops-v4.1";
 
 const APP_SHELL = [
   "./",
