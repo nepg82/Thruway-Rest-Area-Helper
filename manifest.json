@@ -1,6 +1,6 @@
 {
-  "name": "NYS Thruway Rest Area Helper",
-  "short_name": "Thruway Helper",
+  "name": "Rest Area Helper",
+  "short_name": "Rest Area Helper",
   "description": "A simple tool for determining the next rest area on a road trip in NY.",
   "start_url": "./",
   "scope": "./",
